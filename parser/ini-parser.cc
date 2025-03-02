@@ -39,21 +39,21 @@ iniParser::iniParser(const std::string& filename) : filename(filename), loaded(f
   iniParser::~iniParser() {
 }
 
-std::string iniParser::get(const std::string& section, const std::string& key) const {
+std::string iniParser::get(const std::string& section, const std::string& key, const std::string& base) const {
 
   if(!loaded) {
     std::cerr << "Error: file " << filename << " not loaded" << std::endl;
-    return "";
+    return base;
   }
 
   auto sectionIt = data.find(section);
   if(sectionIt == data.end()) {
-    return "";
+    return base;
   }
 
   auto keyIt = sectionIt->second.find(key);
   if(keyIt == sectionIt->second.end()) {
-    return "";
+    return base;
 }
 
     return keyIt->second;
@@ -78,6 +78,6 @@ void iniParser::save(const std::string& filename) const {
     }
 }
 
-
-
-
+bool iniParser::isLoaded() const {
+    return loaded;
+}

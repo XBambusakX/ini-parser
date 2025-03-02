@@ -11,11 +11,11 @@ public:
     iniParser(const std::string& filename);
     ~iniParser();
 
-    std::string get(const std::string& section, const std::string& key) const;
+    std::string get(const std::string& section, const std::string& key, const std::string& base) const;
     void set(const std::string& section, const std::string& key, const std::string& value);
     void save(const std::string& filename) const;
 
-    //bool isLoaded() const;
+    bool isLoaded() const;
 private:
     std::map<std::string, std::map<std::string, std::string>> data;
     std::string filename;
