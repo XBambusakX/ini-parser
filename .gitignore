@@ -1,4 +1,5 @@
 Makefile
-./app
+app
 config.ini
+bak
 src
