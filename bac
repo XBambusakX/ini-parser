@@ -1,0 +1,15 @@
+//comment
+#comment
+;comment
+[window]
+width=800
+height=600
+title=Hello World
+[app]
+name=MyApp
+version=1.0
+[background]
+r=0
+g=0x15
+b=
+a=0xff
